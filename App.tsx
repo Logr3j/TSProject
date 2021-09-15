@@ -14,6 +14,8 @@ import {
   ScrollView,
   StatusBar,
   StyleSheet,
+  Button,
+  Alert,
   Text,
   useColorScheme,
   View,
@@ -77,13 +79,19 @@ const App = () => {
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
           </Section>
-          <Section title="Probam tekst">
+          <Button
+             title="Ovo je dugme"
+             color="#842524"
+             accessibilityLabel="Learn more about this purple button"
+             onPress={() => Alert.alert('Ulazite u zonu sumraka')}
+             />
+            <Section title="Probam tekst">
             <ReloadInstructions />
           </Section>
-          <Section title="Debug">
+          <Section title="Debug / Greške">
             <DebugInstructions />
           </Section>
-          <Section title="Learn More">
+          <Section title="Learn More / Uči više">
             Read the docs to discover what to do next:
           </Section>
           <LearnMoreLinks />
