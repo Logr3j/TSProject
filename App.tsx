@@ -83,7 +83,7 @@ const App = () => {
              title="Ovo je dugme"
              color="#842524"
              accessibilityLabel="Learn more about this purple button"
-             onPress={() => Alert.alert('Ulazite u zonu sumraka')}
+             onPress={() => Alert.alert('Sad samo probam git ekstenziju')}
              />
             <Section title="Probam tekst">
             <ReloadInstructions />
