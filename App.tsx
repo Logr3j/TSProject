@@ -85,6 +85,12 @@ const App = () => {
              accessibilityLabel="Learn more about this purple button"
              onPress={() => Alert.alert('Sad samo probam git ekstenziju')}
              />
+          <Button
+             title="Ovo je drugo dugme iz drugog brancha"
+             color="#842524"
+             accessibilityLabel="Learn more about this purple button"
+             onPress={() => Alert.alert('drugi branch')}
+             />
             <Section title="Probam tekst">
             <ReloadInstructions />
           </Section>
