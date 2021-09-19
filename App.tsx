@@ -80,7 +80,7 @@ const App = () => {
             screen and then come back to see your edits.
           </Section>
           <Button
-             title="Ovo je dugmeefdfe"
+             title="DUGME"
              color="#842524"
              accessibilityLabel="Learn more about this purple button"
              onPress={() => Alert.alert('Sad samo probam git ekstenziju')}
