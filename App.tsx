@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 
 
-let prviPoeni: int = 0
-let drugiPoeni: int = 0
+let prviPoeni = 0
+let drugiPoeni= 0
+
+function counter(){
+  return x + 1;
+}
+
 
 const AlignSelfLayout = () => {
   const [alignSelf, setAlignSelf] = useState("stretch");
@@ -20,15 +25,15 @@ const AlignSelfLayout = () => {
       <View style={styles.row}>  
       <View style={styles.buttonContainer}>
           <Button
-            
-            title="Press Me"
+            onClick={() => counter(prviPoeni)}
+            title="Prvi igrač"
             color="#841584">
             </Button>
             </View>        
         <View style={styles.buttonContainer}>
           <Button
-            
-            title="Press Me"
+            onClick={() => counter(drugiPoeni)}
+            title="drugi igrač"
             color="#841584">
           </Button>
           </View>
