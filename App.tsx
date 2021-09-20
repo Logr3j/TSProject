@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 
 
-let prviPoeni = 0
-let drugiPoeni= 0
+let prviPoeni:number = 0
+let drugiPoeni:number = 0
 
-function counter(){
+let counter = function(x:number):number{
   return x + 1;
 }
 
