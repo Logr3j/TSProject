@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
-
+import CounterInput from "react-native-counter-input";
 
 let prviPoeni:number = 0
 let drugiPoeni:number = 0
 
-let counter = function(x:number):number{
+/*let counter = function(x:number):number{
   return x + 1;
 }
-
+*/
 
 const AlignSelfLayout = () => {
   const [alignSelf, setAlignSelf] = useState("stretch");
@@ -24,15 +24,15 @@ const AlignSelfLayout = () => {
       setSelectedValue={setAlignSelf}>       
       <View style={styles.row}>  
       <View style={styles.buttonContainer}>
+        
           <Button
-            onClick={() => counter(prviPoeni)}
             title="Prvi igrač"
             color="#841584">
             </Button>
             </View>        
         <View style={styles.buttonContainer}>
           <Button
-            onClick={() => counter(drugiPoeni)}
+           // onClick={() => counter(drugiPoeni)}
             title="drugi igrač"
             color="#841584">
           </Button>
@@ -74,6 +74,7 @@ const PreviewLayout = ({
     </View>
   </View>
 );
+
 
 const styles = StyleSheet.create({
   container: {
@@ -128,9 +129,13 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: 'bold',
     fontSize: 30,
+    textAlign: "center",
   },
   buttonContainer: {
-    margin: 20
+    margin: 10,
+    marginHorizontal: "1%",
+    minWidth: "48%",
+    
   },  
   text: {
     borderWidth: 1,
