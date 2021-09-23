@@ -1,58 +1,55 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
-import CounterInput from "react-native-counter-input";
+
 
 let prviPoeni:number = 0
 let drugiPoeni:number = 0
 
-/*let counter = function(x:number):number{
+var counter = function(x:number):number{
   return x + 1;
 }
-*/
+
+
 
 const AlignSelfLayout = () => {
-  const [alignSelf, setAlignSelf] = useState("stretch");
+  const [ setAlignSelf ] = useState("stretch");
   
-    
- 
 
   return (
     <PreviewLayout
       label="Stoni tenis"
-      selectedValue={alignSelf}
+      
       
       setSelectedValue={setAlignSelf}>       
       <View style={styles.row}>  
       <View style={styles.buttonContainer}>
         
           <Button
+            onPress={() => counter(prviPoeni)}
             title="Prvi igrač"
-            color="#841584">
+            color="green">
             </Button>
             </View>        
         <View style={styles.buttonContainer}>
           <Button
-           // onClick={() => counter(drugiPoeni)}
+            onPress={() => counter(drugiPoeni)}
             title="drugi igrač"
-            color="#841584">
+            color="green">
           </Button>
           </View>
           </View>
       <View style={styles.row}>  
         <View
             style={[styles.box, {
-            alignSelf,
             marginHorizontal: "1%",
             minWidth: "48%",
-            backgroundColor: "powderblue",
+            backgroundColor: "white",
           }]}>
             <Text style={styles.bigBlue}>{prviPoeni}</Text>
         </View>
         <View
             style={[styles.box, {
-            alignSelf,
-            
-            backgroundColor: "skyblue" }]}>
+            backgroundColor: "white" }]}>
             <Text style={styles.bigBlue}>{drugiPoeni}</Text>
         </View>
       </View>
@@ -60,6 +57,7 @@ const AlignSelfLayout = () => {
     </PreviewLayout>
   );
 };
+
 
 const PreviewLayout = ({
   label,
@@ -80,7 +78,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: 8,
-    backgroundColor: "aliceblue",
+    backgroundColor: "lightgreen",
     minHeight: 200,
   },
   box: {
