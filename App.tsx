@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
-
-
+import { View, Text, StyleSheet  } from "react-native";
+import { Button } from "react-native-paper";
 
 
 
@@ -16,39 +15,97 @@ const AlignSelfLayout = () => {
       
       
       setSelectedValue={setAlignSelf}>       
-      <View style={styles.row}>  
-      <View style={styles.buttonContainer}>
-        
-          <Button
-            onPress={() => setCount1(count1 + 1)}
-            title="Prvi igrač"
-            color="green">
-            </Button>
-            </View>        
-        <View style={styles.buttonContainer}>
-          <Button
-            onPress={() => setCount2(count2 + 1)}
-            title="drugi igrač"
-            color="green">
-          </Button>
-          </View>
-          </View>
-      <View style={styles.row}>  
+       <View style={styles.row}>  
         <View
             style={[styles.box, {
             marginHorizontal: "1%",
             minWidth: "48%",
-            backgroundColor: "white",
+            backgroundColor: null,
           }]}>
             <Text style={styles.bigBlue}>{count1}</Text>
         </View>
         <View
             style={[styles.box, {
-            backgroundColor: "white" }]}>
+              marginHorizontal: "1%",
+              minWidth: "48%",
+              backgroundColor: null, }]}>
             <Text style={styles.bigBlue}>{count2}</Text>
         </View>
       </View>
+      <View style={styles.row}>  
+          <View style={styles.buttonContainer}>
+            <Button 
+            color="green" 
+            mode="contained" 
+            onPress={() => setCount1(count1 + 1)
+            }>
+                Prvi igrač
+            </Button>
+          </View>        
+        <View style={styles.buttonContainer}>
+           <Button 
+            color="green"
+            mode="contained" 
+            onPress={() => setCount2(count2 + 1)}>
+                Drugi igrač
+            </Button>
+          </View>
+          </View>
+     
+      <View style={styles.row}>  
+        <View
+            style={[styles.box, {
+            marginHorizontal: "1%",
+            minWidth: "48%",
+            backgroundColor: "white"
+          }]}>
+            {(() => {
+              if (((count1+count2)%4 == 0) | ((count1+count2)%4 == 1)){
+                  return (
+            <Text style={styles.bigBlue}>{'servis'}</Text>
+            )
+              }
+              
+              return null;
+            })()}
+            </View>
+        <View
+           style={[styles.box, {
+            marginHorizontal: "1%",
+            minWidth: "48%",
+            backgroundColor: "white"
+          }]}>
+            {(() => {
+              if (((count1+count2)%4 == 2) | ((count1+count2)%4 == 3)){
+                  return (
+            <Text style={styles.bigBlue}>{'servis'}</Text>
+            )
+              }
+              
+              return null;
+            })()}
+        </View>
+      </View>
       
+      <View style={styles.row}>  
+          <View style={styles.buttonContainer}>
+            <Button 
+            color="green" 
+            mode="contained" 
+            onPress={() => setCount1(count1 - 1)
+            }>
+                Poništi poen
+            </Button>
+          </View>        
+        <View style={styles.buttonContainer}>
+           <Button 
+            color="green"
+            mode="contained" 
+            onPress={() => setCount2(count2 - 1)}>
+                poništi poen
+            </Button>
+          </View>
+          </View>
     </PreviewLayout>
   );
 };
