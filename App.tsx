@@ -10,25 +10,16 @@ const AlignSelfLayout = () => {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
   return (
-    <PreviewLayout
-      label="Stoni tenis"
-      
-      
+    <PreviewLayout 
+      label="Stoni tenis"            
       setSelectedValue={setAlignSelf}>       
        <View style={styles.row}>  
         <View
-            style={[styles.box, {
-            marginHorizontal: "1%",
-            minWidth: "48%",
-            backgroundColor: null,
-          }]}>
+            style={styles.box}>
             <Text style={styles.bigBlue}>{count1}</Text>
         </View>
         <View
-            style={[styles.box, {
-              marginHorizontal: "1%",
-              minWidth: "48%",
-              backgroundColor: null, }]}>
+            style={styles.box}>
             <Text style={styles.bigBlue}>{count2}</Text>
         </View>
       </View>
@@ -54,13 +45,9 @@ const AlignSelfLayout = () => {
      
       <View style={styles.row}>  
         <View
-            style={[styles.box, {
-            marginHorizontal: "1%",
-            minWidth: "48%",
-            backgroundColor: "white"
-          }]}>
+            style={styles.box}>
             {(() => {
-              if (((count1+count2)%4 == 0) | ((count1+count2)%4 == 1)){
+              if (((count1+count2)%4 == 0) || ((count1+count2)%4 == 1)){
                   return (
             <Text style={styles.bigBlue}>{'servis'}</Text>
             )
@@ -70,13 +57,9 @@ const AlignSelfLayout = () => {
             })()}
             </View>
         <View
-           style={[styles.box, {
-            marginHorizontal: "1%",
-            minWidth: "48%",
-            backgroundColor: "white"
-          }]}>
+           style={styles.box}>
             {(() => {
-              if (((count1+count2)%4 == 2) | ((count1+count2)%4 == 3)){
+              if (((count1+count2)%4 == 2) || ((count1+count2)%4 == 3)){
                   return (
             <Text style={styles.bigBlue}>{'servis'}</Text>
             )
@@ -90,7 +73,7 @@ const AlignSelfLayout = () => {
       <View style={styles.row}>  
           <View style={styles.buttonContainer}>
             <Button 
-            color="green" 
+            color="orange" 
             mode="contained" 
             onPress={() => setCount1(count1 - 1)
             }>
@@ -99,7 +82,7 @@ const AlignSelfLayout = () => {
           </View>        
         <View style={styles.buttonContainer}>
            <Button 
-            color="green"
+            color="orange"
             mode="contained" 
             onPress={() => setCount2(count2 - 1)}>
                 poništi poen
@@ -114,7 +97,6 @@ const AlignSelfLayout = () => {
 const PreviewLayout = ({
   label,
   children,
-
 }) => (
   <View style={{padding: 10, flex: 1, }}>
     <Text style={styles.label}>{label}</Text>
@@ -129,7 +111,6 @@ const PreviewLayout = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 8,
     backgroundColor: "lightgreen",
     minHeight: 200,
   },
@@ -137,6 +118,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 6,
     borderRadius: 4,
+    backgroundColor: "white",
     alignSelf: "flex-start",
     marginHorizontal: "1%",
     marginBottom: 6,
@@ -146,6 +128,7 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     flexWrap: "wrap",
+    marginTop: 10,
   },
   button: {
     paddingHorizontal: 8,
