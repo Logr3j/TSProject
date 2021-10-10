@@ -90,14 +90,6 @@ function index() {
   );
 }
 
-const PreviewLayout = ({label, children}) => (
-  <View style={{padding: 10, flex: 1}}>
-    <Text style={styles.label}>{label}</Text>
-
-    <View style={styles.container}>{children}</View>
-  </View>
-);
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
