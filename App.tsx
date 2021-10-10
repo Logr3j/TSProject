@@ -20,16 +20,32 @@ function index() {
         <View style={styles.row}>
           <View style={styles.box}>
             {(() => {
-              if ((count1 + count2) % 4 == 0 || (count1 + count2) % 4 == 1) {
-                return <Text style={styles.bigBlue}>{'SERVE'}</Text>;
+              if (count1 + count2 >= 22) {
+                if ((count1 + count2) % 2 == 1) {
+                  return <Text style={styles.bigBlue}>{'SERVE'}</Text>;
+                }
+                return null;
               }
-              return null;
+              {
+                if ((count1 + count2) % 4 == 0 || (count1 + count2) % 4 == 1) {
+                  return <Text style={styles.bigBlue}>{'SERVE'}</Text>;
+                }
+                return null;
+              }
             })()}
           </View>
           <View style={styles.box}>
             {(() => {
-              if ((count1 + count2) % 4 == 2 || (count1 + count2) % 4 == 3) {
-                return <Text style={styles.bigBlue}>{'SERVE'}</Text>;
+              if (count1 + count2 >= 22) {
+                if ((count1 + count2) % 2 == 0) {
+                  return <Text style={styles.bigBlue}>{'SERVE'}</Text>;
+                }
+                return null;
+              }
+              {
+                if ((count1 + count2) % 4 == 2 || (count1 + count2) % 4 == 3) {
+                  return <Text style={styles.bigBlue}>{'SERVE'}</Text>;
+                }
               }
               return null;
             })()}
