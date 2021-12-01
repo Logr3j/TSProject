@@ -23,7 +23,11 @@ const Stopwatch = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.containerClock}>
+      <View style={styles.containerDigits}>
+        <Text style={styles.digits}>
+          {('0' + Math.floor((time / 3600000) % 24)).slice(-2)}
+        </Text>
+        <Text style={styles.dots}>:</Text>
         <Text style={styles.digits}>
           {('0' + Math.floor((time / 60000) % 60)).slice(-2)}
         </Text>
@@ -36,7 +40,11 @@ const Stopwatch = () => {
           {('0' + ((time / 100) % 100)).slice(-1)}
         </Text>
       </View>
-      <View style={styles.containerClock}>
+      <View style={styles.containerDigits}>
+        <Text style={styles.digits}>
+          {('0' + Math.floor((lap / 3600000) % 24)).slice(-2)}
+        </Text>
+        <Text style={styles.dots}>:</Text>
         <Text style={styles.digits}>
           {('0' + Math.floor((lap / 60000) % 60)).slice(-2)}
         </Text>
@@ -54,7 +62,10 @@ const Stopwatch = () => {
           <Button
             style={styles.button}
             color={'#aeff8c'}
-            labelStyle={{color: 'black', fontSize: 15}}
+            labelStyle={{
+              color: 'black',
+              fontSize: 18,
+            }}
             mode="contained"
             onPress={() => setTimerOn(true)}>
             Start
@@ -64,7 +75,10 @@ const Stopwatch = () => {
           <Button
             style={styles.button}
             color={'#fff197'}
-            labelStyle={{color: 'black', fontSize: 15}}
+            labelStyle={{
+              color: 'black',
+              fontSize: 18,
+            }}
             mode="contained"
             onPress={() => setLap(time)}>
             Lap
@@ -74,7 +88,10 @@ const Stopwatch = () => {
           <Button
             style={styles.button}
             color={'red'}
-            labelStyle={{color: 'white', fontSize: 15}}
+            labelStyle={{
+              color: 'white',
+              fontSize: 18,
+            }}
             mode="contained"
             onPress={() => setTimerOn(false)}>
             Stop
@@ -84,7 +101,10 @@ const Stopwatch = () => {
           <Button
             style={styles.button}
             color={'#fff197'}
-            labelStyle={{color: 'black', fontSize: 15}}
+            labelStyle={{
+              color: 'black',
+              fontSize: 18,
+            }}
             mode="contained"
             onPress={() => setTimerOn(true)}>
             Resume
@@ -94,7 +114,10 @@ const Stopwatch = () => {
           <Button
             style={styles.button}
             color={'#fff197'}
-            labelStyle={{color: 'black', fontSize: 15}}
+            labelStyle={{
+              color: 'black',
+              fontSize: 18,
+            }}
             mode="contained"
             onPress={() => {
               setTime(0);
@@ -113,19 +136,20 @@ export default Stopwatch;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    paddingTop: 30,
     alignItems: 'center',
     backgroundColor: '#919191',
   },
-  containerClock: {
-    backgroundColor: '#919191',
+  containerDigits: {
+    marginTop: 10,
+    backgroundColor: '#cccccc',
     borderColor: 'black',
     borderRadius: 10,
     borderWidth: 1,
     padding: 20,
     flexDirection: 'row',
-    height: 100,
-    width: 250,
+    // height: 60,
+    width: 300,
     justifyContent: 'center',
     elevation: 5,
   },
@@ -136,9 +160,9 @@ const styles = StyleSheet.create({
   },
   digits: {
     backgroundColor: '#f9f9f9',
-    width: 60,
-    height: 60,
-    fontSize: 40,
+    width: 50,
+    height: 50,
+    fontSize: 35,
     alignItems: 'center',
     textAlign: 'center',
     borderRadius: 10,
@@ -147,14 +171,14 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   dots: {
-    fontSize: 40,
+    fontSize: 35,
     width: 15,
     textAlign: 'center',
   },
   button: {
     margin: 5,
-    width: '30%',
-    height: 40,
+    width: 120,
+    // height: 100,
     elevation: 10,
   },
 });
